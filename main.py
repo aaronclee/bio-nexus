@@ -33,11 +33,12 @@ if __name__ == "__main__":
                         help="Path to the knowledge graph JSON file.")
     parser.add_argument("--data_path", default="./data/data.json",
                         help="Path to the input abstracts JSON file.")
-    parser.add_argument("--model_name", default="llama3.1-8b",
+    # Can switch back to llama3.1-8b for lighter compute
+    parser.add_argument("--model_name", default="llama3.3-70b",
                         help="Name of the model to use")
     # Additional args for article fetching:
     parser.add_argument("--max_articles", type=int, default=100, help="Maximum number of articles to fetch")
-    parser.add_argument("--years_back", type=int, default=2, help="How many years back to fetch articles")
+    parser.add_argument("--years_back", type=int, default=1, help="How many years back to fetch articles")
     args = parser.parse_args()
     
     # Logging
@@ -69,7 +70,7 @@ if __name__ == "__main__":
     updater = KnowledgeGraphUpdater(
         graph_path=args.graph_path,
         entity_aliases_path="./data/entity_aliases.json",
-        llm_processor=inference
+        model=inference
     )
 
     # Load abstracts

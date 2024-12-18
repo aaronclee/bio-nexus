@@ -128,7 +128,7 @@ class KnowledgeGraphUpdater:
 
         # If multiple candidates, disambiguate
         if candidate_entities:
-            match_id = self.llm_processor.disambiguate_entity(entity, candidate_entities)
+            match_id = self.model.disambiguate_entity(entity, candidate_entities)
             if match_id:
                 logger.info(f"Disambiguation matched '{entity.name}' to node_id '{match_id}'")
                 return match_id
@@ -267,6 +267,7 @@ class KnowledgeGraphUpdater:
                     if entity_ids:
                         ent.external_ids = ent.external_ids or {}
                         ent.external_ids["PubTatorID"] = entity_ids[0]
+                        print()
                         logger.debug(f"Found PubTator ID {entity_ids[0]} for {ent.name}")
                 except Exception as e:
                     logger.warning(f"Failed to fetch PubTator ID for {ent.name}: {e}")
@@ -298,6 +299,11 @@ class KnowledgeGraphUpdater:
                     target_id = self.create_node(target_entity.__dict__)
 
                 # create or update the edge
+                print('################')
+                logger.debug(f"abstract_info: {abstract_info} (type: {type(abstract_info)})")
+                print(abstract_info, type(abstract_info))
+                print('################')
+
                 edge_id = self.create_update_edge(source_id, target_id, {
                     "relationship_type": relation.relationship_type,
                     "paper_id": abstract_info["pmid"],
@@ -322,5 +328,9 @@ class KnowledgeGraphUpdater:
             return updates
 
         except Exception as e:
+            print('################')
+            logger.debug(f"abstract_info: {abstract_info} (type: {type(abstract_info)})")
+            print(abstract_info, type(abstract_info))
+            print('################')
             logger.error(f"Error processing abstract {abstract_info.get('pmid', 'unknown')}: {e}")
             raise

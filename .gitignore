@@ -7,6 +7,10 @@ __pycache__/
 logs/
 *.log
 
+# Ignore figures
+figures/
+.png
+
 # Ignore environment variables
 .env
 
