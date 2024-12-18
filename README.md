@@ -1,4 +1,4 @@
-# README for GNBR 2.0
+# README BIO-NEXUS
 ## Overview
 This is BIO-NEXUS, a biomedical knowledge graph tool for extracting, processing, and visualizing relationships between biomedical entities from scientific literature. It combines LLMs (e.g., Llama models offered by Cerebras API) with domain-specific tools such as PubTator to analyze abstracts, extract entities (e.g., genes, diseases) and relationships (e.g., cause, treat), and populate a dynamic knowledge graph.
 
