@@ -8,8 +8,8 @@ logs/
 *.log
 
 # Ignore figures
-figures/
-.png
+# figures/
+# .png
 
 # Ignore environment variables
 .env
