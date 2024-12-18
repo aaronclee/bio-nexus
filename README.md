@@ -78,3 +78,7 @@ Here are two miniature curated knowledge graphs on two different abstracts:
 
 ### Logs
 Logs are stored in the logs/ directory for monitoring API calls and processing and error handling.
+
+## References
+Chih-Hsuan Wei, Alexis Allot, Po-Ting Lai, Robert Leaman, Shubo Tian, Ling Luo, Qiao Jin, Zhizheng Wang, Qingyu Chen, Zhiyong Lu, PubTator 3.0: an AI-powered literature resource for unlocking biomedical knowledge, Nucleic Acids Research, Volume 52, Issue W1, 5 July 2024, Pages W540–W546, https://doi.org/10.1093/nar/gkae235
+
