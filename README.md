@@ -3,15 +3,15 @@
 This is BIO-NEXUS, a biomedical knowledge graph tool for extracting, processing, and visualizing relationships between biomedical entities from scientific literature. It combines LLMs (e.g., Llama models offered by Cerebras API) with domain-specific tools such as PubTator to analyze abstracts, extract entities (e.g., genes, diseases) and relationships (e.g., cause, treat), and populate a dynamic knowledge graph.
 
 ### Pipeline
-#### 1. Automated Data Collection: 
+#### 0. Automated Data Collection: 
 The system retrieves biomedical abstracts from PubMed based on user-defined date ranges and stores parsed metadata in JSON format.
-#### 2. Entity Retrieval: 
+#### 1. Entity Retrieval: 
 Biomedical concepts and terms within an abstract are identified and cited with the relevant sentences. A secondary LLM call refines the specificity of these entities.
-#### 3. Disambiguation: 
+#### 2. Disambiguation: 
 From exact matching to fuzzy matching with string similarity to LLM disambiguation, the system identifies canonical names and potential aliases for entities.
-#### 4. Relationship Extraction: 
+#### 3. Relationship Extraction: 
 The LLM identifies predefined relationships between entities given the cited context, entity types, and abstract. Context-aware extraction ensures relationships are grounded in the cited evidence, supplemented by confidence scoring.
-#### 5. Deduplication (not shown): 
+#### 4. Deduplication (not shown): 
 Entities and relationships are normalized into a graph format using rule-based or LLM-based approaches, merging highly similar entities or relationships into single nodes or edges, respectively.
 #### Visualized
 ![](figures/GNBR_pipeline_1.png)
