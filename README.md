@@ -14,7 +14,7 @@ The LLM identifies predefined relationships between entities given the cited con
 #### 5. Deduplication (not shown): 
 Entities and relationships are normalized into a graph format using rule-based or LLM-based approaches, merging highly similar entities or relationships into single nodes or edges, respectively.
 #### Visualized
-![](figures/GNBR_pipeline.png)
+![](figures/GNBR_pipeline_1.png)
 
 ### Project Structure
 ```
