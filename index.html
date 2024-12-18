@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Knowledge Graph Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="controls">
+        <input type="text" id="search" placeholder="Search by node name or relationship type..." />
+        <button id="zoom_in">Zoom In</button>
+        <button id="zoom_out">Zoom Out</button>
+        <button id="reset_view">Reset View</button>
+    </div>
+    <div id="graph-container">
+        <div id="graph">
+            <div id="filter-panel" class="overlay top-left">
+                <div class="overlay-section">
+                    <h4>Node Filters</h4>
+                    <ul id="node-filters-list"></ul>
+                </div>
+                <div class="overlay-section">
+                    <h4>Edge Filters</h4>
+                    <ul id="edge-filters-list"></ul>
+                </div>
+            </div>
+            <div id="legend" class="overlay bottom-left">
+                <div class="overlay-section">
+                    <strong>Node Types:</strong>
+                    <ul id="node-legend"></ul>
+                </div>
+                <div class="overlay-section">
+                    <strong>Edge Types:</strong>
+                    <ul id="edge-legend"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="info">
+            <h3>Details</h3>
+            <div id="details">Click on a node or edge to see details</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

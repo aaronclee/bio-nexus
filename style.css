@@ -1,0 +1,196 @@
+/* style.css */
+
+/* General Page and Layout */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#controls {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+#controls input#search {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#controls button {
+    background-color: #007BFF;
+    border: none;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#controls button:hover {
+    background-color: #0056b3;
+}
+
+#graph-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Graph Area */
+#graph {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+svg {
+    display: block;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+/* Overlay Panels */
+.overlay {
+    position: absolute;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 200px;
+    z-index: 1;
+}
+
+.overlay.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.overlay.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.overlay-section {
+    margin-bottom: 10px;
+}
+
+/* Node and Edge Filters */
+#node-filters-list,
+#edge-filters-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#node-filters-list li, 
+#edge-filters-list li {
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+#node-filters-list li input, 
+#edge-filters-list li input {
+    margin-right: 5px;
+}
+
+/* Legend Styles */
+#legend h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#node-legend, 
+#edge-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#node-legend li, 
+#edge-legend li {
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.legend-color-box {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+
+/* Node and Edge Styles */
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+    cursor: pointer;
+}
+
+.node.hidden {
+    display: none;
+}
+
+/* Removed the default gray stroke color from edges */
+.edge {
+    stroke-width: 4px; /* Thicker edge lines */
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.edge.hidden {
+    display: none;
+}
+
+.node-label {
+    pointer-events: none;
+    font-size: 12px;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 12px;
+    display: none;
+    pointer-events: none;
+}
+
+/* Details Panel */
+#info {
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+#info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#details {
+    font-size: 14px;
+    line-height: 1.5;
+}
